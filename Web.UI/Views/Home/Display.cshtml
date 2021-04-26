@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Data.Models.CarModel>
+
+@{
+    ViewBag.Title = "Cars Display";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2 style="text-align:center">Your Data</h2>*@
+
+    <div class="alert alert-info" style="text-align:center">
+        
+
+        <h2> @ViewBag.CarsSold </h2>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Deal Number")
+        </th>
+        <th>
+            @Html.DisplayName("Customer Name")
+        </th>
+        <th>
+            @Html.DisplayName("Dealership Name")
+        </th>
+        <th>
+            @Html.DisplayName("Vehicle")
+        </th>
+        <th>
+            @Html.DisplayName("Price")
+        </th>
+        <th>
+            @Html.DisplayName("Date")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DealNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DealershipName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vehicle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                
+                @Html.Label(item.Date.ToString("MM/dd/yyyy"))
+            </td>
+
+        </tr>
+    }
+
+</table>

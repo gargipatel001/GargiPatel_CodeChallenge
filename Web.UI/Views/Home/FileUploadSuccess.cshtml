@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "FileUploadSuccess";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <style>
+        .success-box {
+            position: relative;
+            height: 150px;
+            padding: 15px 15px;
+            margin: 15px 15px;
+            border-style: solid;
+            margin-right: 0;
+            margin-left: 0;
+            background-color: #fff;
+            border-color: #ddd;
+            border-width: 1px;
+            border-radius: 4px 4px 0 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+    </style>
+
+<div class="success-box text-center">
+    <h1 class="text-success">File Uploaded Successfully!</h1>
+    <p class="lead">@Html.ActionLink("Click Here Check Data", "ReadFile", "Home") </p>
+    @*<p>@Html.ActionLink("Home", "Index", "Home") </p>*@
+</div>
